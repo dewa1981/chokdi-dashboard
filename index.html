@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📊 Dashboard Transaksi USDT — Chokdi</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0d1117; color:#e6edf3; font-family:-apple-system,'Segoe UI',Roboto,sans-serif; padding:24px; }
+  .wrap { max-width:960px; margin:0 auto; }
+  h1 { font-size:24px; margin-bottom:4px; }
+  .sub { color:#8b949e; font-size:13px; margin-bottom:24px; }
+  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-bottom:28px; }
+  .card { background:#161b22; border:1px solid #30363d; border-radius:10px; padding:16px; }
+  .card .label { color:#8b949e; font-size:12px; text-transform:uppercase; letter-spacing:.5px; }
+  .card .value { font-size:26px; font-weight:700; margin-top:6px; }
+  .card .value.cyan { color:#58a6ff; }
+  .card .value.green { color:#3fb950; }
+  .card .value.orange { color:#d29922; }
+  h2 { font-size:17px; margin:28px 0 12px; }
+  table { width:100%; border-collapse:collapse; background:#161b22; border:1px solid #30363d; border-radius:10px; overflow:hidden; }
+  th { text-align:left; padding:10px 12px; font-size:12px; color:#8b949e; text-transform:uppercase; border-bottom:1px solid #30363d; background:#0d1117; }
+  td { padding:9px 12px; font-size:13px; border-bottom:1px solid #21262d; }
+  tr:last-child td { border-bottom:none; }
+  .num { text-align:right; font-variant-numeric:tabular-nums; }
+  .nama { font-weight:600; }
+  .mono { font-family:ui-monospace,monospace; font-size:12px; color:#8b949e; }
+  .kecil { font-size:11px; }
+  .bar-cell { width:30%; }
+  .bar { height:10px; background:linear-gradient(90deg,#1f6feb,#58a6ff); border-radius:5px; min-width:2px; }
+  .footer { text-align:center; color:#484f58; font-size:11px; margin-top:32px; }
+  .badge { display:inline-block; background:#1f6feb22; color:#58a6ff; border:1px solid #1f6feb55; border-radius:20px; padding:2px 10px; font-size:11px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>📊 Dashboard Transaksi USDT</h1>
+  <div class="sub">Wallet: <span class="mono">0x2DD428e5…409d11caA</span> · USDT BEP-20 (≥ 1 USDT) · <span class="badge">Auto dari Alchemy API</span></div>
+
+  <div class="stats">
+    <div class="card"><div class="label">Total Transfer</div><div class="value cyan">1064</div></div>
+    <div class="card"><div class="label">Total Gaji Keluar</div><div class="value green">$149,613.54</div></div>
+    <div class="card"><div class="label">Karyawan Terdeteksi</div><div class="value orange">26</div></div>
+    <div class="card"><div class="label">Transaksi Cocok</div><div class="value">322</div></div>
+  </div>
+
+  <h2>💰 Ringkasan per Karyawan (Keluar)</h2>
+  <table>
+    <tr><th>Nama</th><th class="num">Jumlah Tx</th><th class="num">Total USDT</th><th>Distribusi</th></tr>
+    <tr>
+      <td class="nama">BOBI FIRMANSYAH</td>
+      <td class="num">22x</td>
+      <td class="num">$24,738.52</td>
+      <td class="bar-cell"><div class="bar" style="width:100.0%"></div></td>
+    </tr><tr>
+      <td class="nama">HARTONI</td>
+      <td class="num">28x</td>
+      <td class="num">$22,179.87</td>
+      <td class="bar-cell"><div class="bar" style="width:89.7%"></div></td>
+    </tr><tr>
+      <td class="nama">YOGI ANDIKA</td>
+      <td class="num">23x</td>
+      <td class="num">$13,361.89</td>
+      <td class="bar-cell"><div class="bar" style="width:54.0%"></div></td>
+    </tr><tr>
+      <td class="nama">NURHADI GUSNAIN</td>
+      <td class="num">21x</td>
+      <td class="num">$12,921.01</td>
+      <td class="bar-cell"><div class="bar" style="width:52.2%"></div></td>
+    </tr><tr>
+      <td class="nama">HERY HARYADI</td>
+      <td class="num">23x</td>
+      <td class="num">$12,721.18</td>
+      <td class="bar-cell"><div class="bar" style="width:51.4%"></div></td>
+    </tr><tr>
+      <td class="nama">JOURDAN</td>
+      <td class="num">20x</td>
+      <td class="num">$7,447.13</td>
+      <td class="bar-cell"><div class="bar" style="width:30.1%"></div></td>
+    </tr><tr>
+      <td class="nama">MUHAMMAD SAFIUDIN</td>
+      <td class="num">20x</td>
+      <td class="num">$7,403.15</td>
+      <td class="bar-cell"><div class="bar" style="width:29.9%"></div></td>
+    </tr><tr>
+      <td class="nama">TEGAR</td>
+      <td class="num">19x</td>
+      <td class="num">$7,177.84</td>
+      <td class="bar-cell"><div class="bar" style="width:29.0%"></div></td>
+    </tr><tr>
+      <td class="nama">ERICK</td>
+      <td class="num">18x</td>
+      <td class="num">$6,349.06</td>
+      <td class="bar-cell"><div class="bar" style="width:25.7%"></div></td>
+    </tr><tr>
+      <td class="nama">M RIZKY PRATAMA</td>
+      <td class="num">15x</td>
+      <td class="num">$4,974.13</td>
+      <td class="bar-cell"><div class="bar" style="width:20.1%"></div></td>
+    </tr><tr>
+      <td class="nama">SHEREN</td>
+      <td class="num">14x</td>
+      <td class="num">$4,828.26</td>
+      <td class="bar-cell"><div class="bar" style="width:19.5%"></div></td>
+    </tr><tr>
+      <td class="nama">CELVIN APRIO</td>
+      <td class="num">10x</td>
+      <td class="num">$2,734.68</td>
+      <td class="bar-cell"><div class="bar" style="width:11.1%"></div></td>
+    </tr><tr>
+      <td class="nama">MICKEY RAMA ANDIKA</td>
+      <td class="num">9x</td>
+      <td class="num">$2,327.36</td>
+      <td class="bar-cell"><div class="bar" style="width:9.4%"></div></td>
+    </tr><tr>
+      <td class="nama">STEVEN ZEBUA</td>
+      <td class="num">8x</td>
+      <td class="num">$2,233.85</td>
+      <td class="bar-cell"><div class="bar" style="width:9.0%"></div></td>
+    </tr><tr>
+      <td class="nama">JUSTIN LIMORGEN</td>
+      <td class="num">8x</td>
+      <td class="num">$2,133.71</td>
+      <td class="bar-cell"><div class="bar" style="width:8.6%"></div></td>
+    </tr><tr>
+      <td class="nama">RIDUAN HAMID</td>
+      <td class="num">8x</td>
+      <td class="num">$2,079.67</td>
+      <td class="bar-cell"><div class="bar" style="width:8.4%"></div></td>
+    </tr><tr>
+      <td class="nama">M RAFLY AL RISYA</td>
+      <td class="num">8x</td>
+      <td class="num">$2,075.59</td>
+      <td class="bar-cell"><div class="bar" style="width:8.4%"></div></td>
+    </tr><tr>
+      <td class="nama">KELVIN ADINATA</td>
+      <td class="num">8x</td>
+      <td class="num">$2,075.52</td>
+      <td class="bar-cell"><div class="bar" style="width:8.4%"></div></td>
+    </tr><tr>
+      <td class="nama">M FARIZ RAMADHAN</td>
+      <td class="num">8x</td>
+      <td class="num">$2,075.50</td>
+      <td class="bar-cell"><div class="bar" style="width:8.4%"></div></td>
+    </tr><tr>
+      <td class="nama">WIVIANY ELLEN</td>
+      <td class="num">6x</td>
+      <td class="num">$1,542.76</td>
+      <td class="bar-cell"><div class="bar" style="width:6.2%"></div></td>
+    </tr><tr>
+      <td class="nama">JIU CHING</td>
+      <td class="num">6x</td>
+      <td class="num">$1,524.42</td>
+      <td class="bar-cell"><div class="bar" style="width:6.2%"></div></td>
+    </tr><tr>
+      <td class="nama">HENDY HALIM</td>
+      <td class="num">5x</td>
+      <td class="num">$1,287.39</td>
+      <td class="bar-cell"><div class="bar" style="width:5.2%"></div></td>
+    </tr><tr>
+      <td class="nama">JIMMY CHANG</td>
+      <td class="num">5x</td>
+      <td class="num">$1,239.71</td>
+      <td class="bar-cell"><div class="bar" style="width:5.0%"></div></td>
+    </tr><tr>
+      <td class="nama">SANDY YULPIANDA</td>
+      <td class="num">5x</td>
+      <td class="num">$865.35</td>
+      <td class="bar-cell"><div class="bar" style="width:3.5%"></div></td>
+    </tr><tr>
+      <td class="nama">FastGaji</td>
+      <td class="num">1x</td>
+      <td class="num">$699.10</td>
+      <td class="bar-cell"><div class="bar" style="width:2.8%"></div></td>
+    </tr><tr>
+      <td class="nama">MUHAMMAD VADRIZAL</td>
+      <td class="num">3x</td>
+      <td class="num">$616.89</td>
+      <td class="bar-cell"><div class="bar" style="width:2.5%"></div></td>
+    </tr>
+  </table>
+
+  <h2>🧾 Transaksi Terbaru (Keluar — Cocok Karyawan)</h2>
+  <table>
+    <tr><th>Waktu</th><th>Karyawan</th><th class="num">Jumlah</th><th>Alamat Tujuan</th></tr>
+    <tr>
+      <td class="mono">2026-08-03T12:44</td>
+      <td class="nama">HENDY HALIM</td>
+      <td class="num">$252.04</td>
+      <td class="mono kecil">0xd8c2555798a8a969b0…</td>
+    </tr><tr>
+      <td class="mono">2026-08-03T12:43</td>
+      <td class="nama">JIU CHING</td>
+      <td class="num">$252.03</td>
+      <td class="mono kecil">0x03097e618a5f2bf5d8…</td>
+    </tr><tr>
+      <td class="mono">2026-08-03T12:43</td>
+      <td class="nama">TEGAR</td>
+      <td class="num">$420.07</td>
+      <td class="mono kecil">0x8fff385a113eb25d9a…</td>
+    </tr><tr>
+      <td class="mono">2026-08-03T12:36</td>
+      <td class="nama">BOBI FIRMANSYAH</td>
+      <td class="num">$1,120.10</td>
+      <td class="mono kecil">0x18d5e7965c3d2c579d…</td>
+    </tr><tr>
+      <td class="mono">2026-08-03T12:34</td>
+      <td class="nama">ERICK</td>
+      <td class="num">$364.04</td>
+      <td class="mono kecil">0x12ad8a8cb33d9b1abb…</td>
+    </tr><tr>
+      <td class="mono">2026-08-03T12:34</td>
+      <td class="nama">M RIZKY PRATAMA</td>
+      <td class="num">$347.24</td>
+      <td class="mono kecil">0x962cb44dcb187c31a7…</td>
+    </tr><tr>
+      <td class="mono">2026-08-03T12:34</td>
+      <td class="nama">STEVEN ZEBUA</td>
+      <td class="num">$280.02</td>
+      <td class="mono kecil">0x01c0ca1cab69362091…</td>
+    </tr><tr>
+      <td class="mono">2026-08-03T12:34</td>
+      <td class="nama">JUSTIN LIMORGEN</td>
+      <td class="num">$252.04</td>
+      <td class="mono kecil">0x10fdfffc6aacb72730…</td>
+    </tr><tr>
+      <td class="mono">2026-08-03T12:34</td>
+      <td class="nama">SHEREN</td>
+      <td class="num">$392.05</td>
+      <td class="mono kecil">0x7c5bd7c422e143af07…</td>
+    </tr><tr>
+      <td class="mono">2026-07-13T15:27</td>
+      <td class="nama">YOGI ANDIKA</td>
+      <td class="num">$614.16</td>
+      <td class="mono kecil">0x12a5e4eabcfad22a40…</td>
+    </tr><tr>
+      <td class="mono">2026-07-13T15:26</td>
+      <td class="nama">HERY HARYADI</td>
+      <td class="num">$614.13</td>
+      <td class="mono kecil">0xb292398d5672918e7b…</td>
+    </tr><tr>
+      <td class="mono">2026-07-13T15:26</td>
+      <td class="nama">WIVIANY ELLEN</td>
+      <td class="num">$290.94</td>
+      <td class="mono kecil">0x2c75b66673d6b8a20f…</td>
+    </tr><tr>
+      <td class="mono">2026-07-06T23:21</td>
+      <td class="nama">CELVIN APRIO</td>
+      <td class="num">$323.25</td>
+      <td class="mono kecil">0xa2e58293d9813e4b81…</td>
+    </tr><tr>
+      <td class="mono">2026-07-06T23:21</td>
+      <td class="nama">NURHADI GUSNAIN</td>
+      <td class="num">$711.11</td>
+      <td class="mono kecil">0x031f52aa40ab6e8925…</td>
+    </tr><tr>
+      <td class="mono">2026-07-06T23:19</td>
+      <td class="nama">HARTONI</td>
+      <td class="num">$969.74</td>
+      <td class="mono kecil">0x91043400624d998ef3…</td>
+    </tr><tr>
+      <td class="mono">2026-07-06T23:19</td>
+      <td class="nama">HENDY HALIM</td>
+      <td class="num">$290.93</td>
+      <td class="mono kecil">0xd8c2555798a8a969b0…</td>
+    </tr><tr>
+      <td class="mono">2026-07-06T23:19</td>
+      <td class="nama">TEGAR</td>
+      <td class="num">$452.57</td>
+      <td class="mono kecil">0x8fff385a113eb25d9a…</td>
+    </tr><tr>
+      <td class="mono">2026-07-06T23:18</td>
+      <td class="nama">JIU CHING</td>
+      <td class="num">$290.92</td>
+      <td class="mono kecil">0x03097e618a5f2bf5d8…</td>
+    </tr><tr>
+      <td class="mono">2026-07-06T23:16</td>
+      <td class="nama">ERICK</td>
+      <td class="num">$420.22</td>
+      <td class="mono kecil">0x12ad8a8cb33d9b1abb…</td>
+    </tr><tr>
+      <td class="mono">2026-07-06T23:14</td>
+      <td class="nama">M RIZKY PRATAMA</td>
+      <td class="num">$400.83</td>
+      <td class="mono kecil">0x962cb44dcb187c31a7…</td>
+    </tr><tr>
+      <td class="mono">2026-07-06T23:14</td>
+      <td class="nama">STEVEN ZEBUA</td>
+      <td class="num">$323.24</td>
+      <td class="mono kecil">0x01c0ca1cab69362091…</td>
+    </tr><tr>
+      <td class="mono">2026-07-01T16:18</td>
+      <td class="nama">JUSTIN LIMORGEN</td>
+      <td class="num">$251.51</td>
+      <td class="mono kecil">0x10fdfffc6aacb72730…</td>
+    </tr><tr>
+      <td class="mono">2026-07-01T16:17</td>
+      <td class="nama">BOBI FIRMANSYAH</td>
+      <td class="num">$1,117.85</td>
+      <td class="mono kecil">0x18d5e7965c3d2c579d…</td>
+    </tr><tr>
+      <td class="mono">2026-07-01T16:16</td>
+      <td class="nama">SHEREN</td>
+      <td class="num">$391.24</td>
+      <td class="mono kecil">0x7c5bd7c422e143af07…</td>
+    </tr><tr>
+      <td class="mono">2026-06-17T17:35</td>
+      <td class="nama">YOGI ANDIKA</td>
+      <td class="num">$536.22</td>
+      <td class="mono kecil">0x12a5e4eabcfad22a40…</td>
+    </tr><tr>
+      <td class="mono">2026-06-17T17:35</td>
+      <td class="nama">HERY HARYADI</td>
+      <td class="num">$536.19</td>
+      <td class="mono kecil">0xb292398d5672918e7b…</td>
+    </tr><tr>
+      <td class="mono">2026-06-17T16:18</td>
+      <td class="nama">STEVEN ZEBUA</td>
+      <td class="num">$301.00</td>
+      <td class="mono kecil">0x01c0ca1cab69362091…</td>
+    </tr><tr>
+      <td class="mono">2026-06-17T16:17</td>
+      <td class="nama">JUSTIN LIMORGEN</td>
+      <td class="num">$300.00</td>
+      <td class="mono kecil">0x10fdfffc6aacb72730…</td>
+    </tr><tr>
+      <td class="mono">2026-06-12T17:00</td>
+      <td class="nama">WIVIANY ELLEN</td>
+      <td class="num">$251.72</td>
+      <td class="mono kecil">0x2c75b66673d6b8a20f…</td>
+    </tr><tr>
+      <td class="mono">2026-06-08T16:45</td>
+      <td class="nama">CELVIN APRIO</td>
+      <td class="num">$275.25</td>
+      <td class="mono kecil">0xa2e58293d9813e4b81…</td>
+    </tr><tr>
+      <td class="mono">2026-06-08T16:45</td>
+      <td class="nama">NURHADI GUSNAIN</td>
+      <td class="num">$605.51</td>
+      <td class="mono kecil">0x031f52aa40ab6e8925…</td>
+    </tr><tr>
+      <td class="mono">2026-06-08T16:44</td>
+      <td class="nama">HARTONI</td>
+      <td class="num">$825.74</td>
+      <td class="mono kecil">0x91043400624d998ef3…</td>
+    </tr><tr>
+      <td class="mono">2026-06-08T16:44</td>
+      <td class="nama">HENDY HALIM</td>
+      <td class="num">$247.66</td>
+      <td class="mono kecil">0xd8c2555798a8a969b0…</td>
+    </tr><tr>
+      <td class="mono">2026-06-08T16:44</td>
+      <td class="nama">JIU CHING</td>
+      <td class="num">$247.65</td>
+      <td class="mono kecil">0x03097e618a5f2bf5d8…</td>
+    </tr><tr>
+      <td class="mono">2026-06-08T16:43</td>
+      <td class="nama">TEGAR</td>
+      <td class="num">$385.26</td>
+      <td class="mono kecil">0x8fff385a113eb25d9a…</td>
+    </tr><tr>
+      <td class="mono">2026-06-08T16:43</td>
+      <td class="nama">ERICK</td>
+      <td class="num">$357.72</td>
+      <td class="mono kecil">0x12ad8a8cb33d9b1abb…</td>
+    </tr><tr>
+      <td class="mono">2026-06-08T16:43</td>
+      <td class="nama">M RIZKY PRATAMA</td>
+      <td class="num">$341.23</td>
+      <td class="mono kecil">0x962cb44dcb187c31a7…</td>
+    </tr><tr>
+      <td class="mono">2026-06-08T16:43</td>
+      <td class="nama">SANDY YULPIANDA</td>
+      <td class="num">$247.66</td>
+      <td class="mono kecil">0x72714dc228f1999140…</td>
+    </tr><tr>
+      <td class="mono">2026-06-08T16:42</td>
+      <td class="nama">MICKEY RAMA ANDIKA</td>
+      <td class="num">$247.67</td>
+      <td class="mono kecil">0xbf43599868c7a2c778…</td>
+    </tr><tr>
+      <td class="mono">2026-06-02T15:56</td>
+      <td class="nama">SHEREN</td>
+      <td class="num">$394.27</td>
+      <td class="mono kecil">0x7c5bd7c422e143af07…</td>
+    </tr><tr>
+      <td class="mono">2026-06-02T15:54</td>
+      <td class="nama">BOBI FIRMANSYAH</td>
+      <td class="num">$1,126.52</td>
+      <td class="mono kecil">0x18d5e7965c3d2c579d…</td>
+    </tr><tr>
+      <td class="mono">2026-05-01T16:53</td>
+      <td class="nama">YOGI ANDIKA</td>
+      <td class="num">$552.25</td>
+      <td class="mono kecil">0x12a5e4eabcfad22a40…</td>
+    </tr><tr>
+      <td class="mono">2026-05-01T16:53</td>
+      <td class="nama">HERY HARYADI</td>
+      <td class="num">$552.25</td>
+      <td class="mono kecil">0xb292398d5672918e7b…</td>
+    </tr><tr>
+      <td class="mono">2026-05-01T16:49</td>
+      <td class="nama">YOGI ANDIKA</td>
+      <td class="num">$552.36</td>
+      <td class="mono kecil">0x12a5e4eabcfad22a40…</td>
+    </tr><tr>
+      <td class="mono">2026-05-01T16:46</td>
+      <td class="nama">HERY HARYADI</td>
+      <td class="num">$552.47</td>
+      <td class="mono kecil">0xb292398d5672918e7b…</td>
+    </tr><tr>
+      <td class="mono">2026-05-01T16:44</td>
+      <td class="nama">JOURDAN</td>
+      <td class="num">$407.11</td>
+      <td class="mono kecil">0xb0757a8e82a4e067d0…</td>
+    </tr><tr>
+      <td class="mono">2026-05-01T16:43</td>
+      <td class="nama">WIVIANY ELLEN</td>
+      <td class="num">$261.68</td>
+      <td class="mono kecil">0x2c75b66673d6b8a20f…</td>
+    </tr><tr>
+      <td class="mono">2026-05-01T16:43</td>
+      <td class="nama">M RAFLY AL RISYA</td>
+      <td class="num">$290.74</td>
+      <td class="mono kecil">0x9442126bff8000958f…</td>
+    </tr><tr>
+      <td class="mono">2026-05-01T16:42</td>
+      <td class="nama">M FARIZ RAMADHAN</td>
+      <td class="num">$290.78</td>
+      <td class="mono kecil">0x6f0a034528e8fd1883…</td>
+    </tr><tr>
+      <td class="mono">2026-05-01T16:41</td>
+      <td class="nama">KELVIN ADINATA</td>
+      <td class="num">$290.76</td>
+      <td class="mono kecil">0x33c28552f9620ff08d…</td>
+    </tr>
+  </table>
+
+  <div class="footer">Dibuat otomatis oleh Chokdi 🐷 · Bang Ano-CR448 · data dari Alchemy API + DB karyawan</div>
+</div>
+</body>
+</html>
